@@ -3,7 +3,9 @@ export const Total = (props) => {
     <>
       <h3>
         Number of exercises:{' '}
-        {props.exercises1 + props.exercises2 + props.exercises3}
+        {props.parts[0].exercises +
+          props.parts[1].exercises +
+          props.parts[2].exercises}
       </h3>
     </>
   );
