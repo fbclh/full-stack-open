@@ -1,10 +1,29 @@
+* {
+  /* border: 1px solid red; */
+}
+
 html,
 body {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
-  /* justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   background-color: black;
   color: white;
 }
 
+section {
+  border: 1px solid white;
+  min-width: 400px;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+p {
+  height: 5rem;
+}
+
+button {
+  margin-right: 0.5rem;
+}
