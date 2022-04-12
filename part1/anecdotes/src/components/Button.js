@@ -5,4 +5,3 @@ export const Button = ({ onClick, text }) => (
     {text}
   </button>
 );
-

@@ -3,8 +3,7 @@ import { Header } from './components/Header';
 import { Button } from './components/Button';
 import { Anecdote } from './components/Anecdote';
 import { Votes } from './components/Votes';
-import styles from './styles/App.module.css' ;
-
+import styles from './styles/App.module.css';
 
 const anecdotes = [
   'If it hurts, do it more often',
@@ -18,7 +17,7 @@ const anecdotes = [
 
 export const App = () => {
   const [selected, setSelected] = useState(0);
-  const [votes, setVotes] = useState(Array(anecdotes.length).fill(0)); 
+  const [votes, setVotes] = useState(Array(anecdotes.length).fill(0));
   // Array(anecdotes.length).fill(0) is same as [0,0,0,0,0,0,0,0,0,0]
 
   const randomAnecdotes = () => {
@@ -33,7 +32,7 @@ export const App = () => {
   };
 
   const highestVotedAnecdote = Math.max(...votes);
-  const mostVotedAnecdote = anecdotes[votes.indexOf(Math.max(...votes))]; 
+  const mostVotedAnecdote = anecdotes[votes.indexOf(Math.max(...votes))];
   // indexOf returns the index of the first element in the array that satisfies the provided testing function.
 
   return (
