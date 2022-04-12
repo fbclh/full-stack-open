@@ -1,27 +1,38 @@
 import { useState } from 'react';
 
 const Statistics = ({ good, neutral, bad }) => {
-  if (good === 0 && neutral === 0 && bad === 0) {
-    return <p>No feedback given</p>;
-  }
+  const total = good + neutral + bad;
+  const average = ((good * 1 + neutral * 0 + bad * -1) / total).toFixed(1);
+  const positive = ((good / total) * 100).toFixed(1);
 
+  if (good === 0 && neutral === 0 && bad === 0) {
+    return <h4>No feedback given</h4>;
+  } else
+    return (
+      <div>
+        <StatisticLine text="good" value={good} />
+        <StatisticLine text="Neutral" value={neutral} />
+        <StatisticLine text="Bad" value={bad} />
+        <StatisticLine text="Total" value={total} />
+        <StatisticLine text="Average" value={average} />
+        <StatisticLine text="Positive" value={positive} sign={'%'} />
+      </div>
+    );
+};
+
+const StatisticLine = ({ text, value, sign }) => {
   return (
-    <section>
-      <h2>Statistics</h2>
-      <p>Good {good}</p>
-      <p>Neutral {neutral}</p>
-      <p>Bad {bad}</p>
-      <p>All {good + neutral + bad}</p>
-      <p>
-        Average{' '}
-        {((good * 1 + neutral * 0 + bad * -1) / (good + neutral + bad)).toFixed(
-          2
-        )}
-      </p>
-      <p>Positive {Math.round((good / (good + neutral + bad)) * 100)}%</p>
-    </section>
+    <p>
+      {text} {value} {sign}
+    </p>
   );
 };
+
+const Button = ({ onClick, text }) => (
+  <>
+    <button onClick={onClick}>{text}</button>
+  </>
+);
 
 const App = () => {
   const [good, setGood] = useState(0);
@@ -36,11 +47,14 @@ const App = () => {
     <>
       <section>
         <h2>Give feedback</h2>
-        <button onClick={handleGood}>good</button>
-        <button onClick={handleNeutral}>neutral</button>
-        <button onClick={handleBad}>bad</button>
+        <Button onClick={handleGood} text="good" />
+        <Button onClick={handleNeutral} text="neutral" />
+        <Button onClick={handleBad} text="bad" />
       </section>
-      <Statistics good={good} neutral={neutral} bad={bad} />
+      <section>
+        <h2>Statistics</h2>
+        <Statistics good={good} neutral={neutral} bad={bad} />
+      </section>
     </>
   );
 };
