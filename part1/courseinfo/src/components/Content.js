@@ -1,19 +1,9 @@
-export const Content = (props) => {
-  return (
-    <>
-      <Part part={props.parts[0].name} exercise={props.parts[0].exercises} />
-      <Part part={props.parts[1].name} exercise={props.parts[1].exercises} />
-      <Part part={props.parts[2].name} exercise={props.parts[2].exercises} />
-    </>
-  );
-};
+import { Part } from './Part';
 
-const Part = (props) => {
-  return (
-    <>
-      <p>
-        {props.part} {props.exercise}
-      </p>
-    </>
-  );
-};
+export const Content = ({ parts }) => (
+  <section>
+    <Part part={parts[0].name} exercise={parts[0].exercises} />
+    <Part part={parts[1].name} exercise={parts[1].exercises} />
+    <Part part={parts[2].name} exercise={parts[2].exercises} />
+  </section>
+);

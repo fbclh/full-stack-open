@@ -1,8 +1,1 @@
-export const Header = (props) => {
-  return (
-    <>
-       {/* {console.log(props)} */}
-      <h1>{props.course}</h1>
-    </>
-  );
-};
+export const Header = ({ course }) => <h1>{course}</h1>;

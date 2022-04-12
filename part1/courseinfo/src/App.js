@@ -22,10 +22,10 @@ export const App = () => {
   };
 
   return (
-    <>
+    <section>
       <Header course={course.name} />
       <Content parts={course.parts} />
       <Total parts={course.parts} />
-    </>
+    </section>
   );
 };

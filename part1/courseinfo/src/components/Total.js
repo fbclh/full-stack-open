@@ -1,12 +1,6 @@
-export const Total = (props) => {
-  return (
-    <>
-      <h3>
-        Number of exercises:{' '}
-        {props.parts[0].exercises +
-          props.parts[1].exercises +
-          props.parts[2].exercises}
-      </h3>
-    </>
-  );
-};
+export const Total = ({ parts }) => (
+  <h3>
+    Number of exercises:{' '}
+    {parts[0].exercises + parts[1].exercises + parts[2].exercises}
+  </h3>
+);
