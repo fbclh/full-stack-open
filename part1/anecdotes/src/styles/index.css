@@ -1,7 +1,3 @@
-* {
-  /* border: 1px solid red; */ /* The console.log of the CSS! */
-} 
-
 html,
 body {
   display: flex;
@@ -11,21 +7,4 @@ body {
   height: 100vh;
   background-color: black;
   color: white;
-}
-
-/*  */
-
-section {
-  border: 1px solid white;
-  min-width: 400px;
-  max-width: 400px;
-  padding: 1rem;
-}
-
-p {
-  height: 5rem;
-}
-
-button {
-  margin-right: 0.5rem;
 }

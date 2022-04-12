@@ -1,0 +1,17 @@
+.button {
+  margin-right: 0.5rem;
+  border-radius: 0;
+  border: 1px solid transparent;
+  cursor: pointer;
+   padding: 0.45em 0.9em;
+}
+
+.button:hover {
+  margin-right: 0.5rem;
+  border-radius: 0;
+  border: 1px solid white;
+  cursor: pointer;
+  padding: 0.45em 0.9em;
+  color: white;
+  background-color: black;
+}

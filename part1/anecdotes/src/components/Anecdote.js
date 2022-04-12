@@ -1,1 +1,3 @@
-export const Anecdote = ({ anecdote }) => <p>{anecdote}</p>;
+import styles from '../styles/Anecdote.module.css';
+
+export const Anecdote = ({ anecdote }) => <p className={styles.p}>{anecdote}</p>;

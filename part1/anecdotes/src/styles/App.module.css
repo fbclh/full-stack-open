@@ -1,0 +1,7 @@
+
+.section {
+  border: 2px solid white;
+  min-width: 400px;
+  max-width: 400px;
+  padding: 1rem;
+}
