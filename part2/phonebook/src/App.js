@@ -4,13 +4,18 @@ export const App = () => {
   const [persons, setPersons] = useState([{ name: 'Arto Hellas' }])
   const [newName, setNewName] = useState('')
 
-  const addNewName = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     const newPerson = {
       name: newName
     }
+
     setPersons(persons.concat(newPerson))
     setNewName('')
+
+    if (persons.find((person) => person.name === newName)) {
+      alert(`${newName} is already added to phonebook`)
+    }
   }
 
   const handleNameChange = (event) => {
@@ -25,9 +30,9 @@ export const App = () => {
           <li key={person.name}>{person.name}</li>
         ))}
       </ul>
-      <form onSubmit={addNewName}>
+      <form onSubmit={handleSubmit}>
         <div>
-          Name: <input value={newName} onChange={handleNameChange} />
+          Name: <input onChange={handleNameChange} value={newName} />
         </div>
         <div>
           <button type="submit">Add</button>
