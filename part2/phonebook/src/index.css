@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
-li {
-  /* list-style: none; */
+li, ul {
+  list-style: none;
+  padding: 0;
 }
