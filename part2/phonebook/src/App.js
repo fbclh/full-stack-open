@@ -7,14 +7,17 @@ export const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     const newPerson = {
-      name: newName
+      name: newName,
+      // phone: newPhone,
+      id: persons.length + 1
     }
-
-    setPersons(persons.concat(newPerson))
-    setNewName('')
 
     if (persons.find((person) => person.name === newName)) {
       alert(`${newName} is already added to phonebook`)
+      setNewName(' ')
+    } else {
+      setPersons(persons.concat(newPerson))
+      setNewName('')
     }
   }
 
@@ -25,11 +28,6 @@ export const App = () => {
   return (
     <>
       <h2>Phone book</h2>
-      <ul>
-        {persons.map((person) => (
-          <li key={person.name}>{person.name}</li>
-        ))}
-      </ul>
       <form onSubmit={handleSubmit}>
         <div>
           Name: <input onChange={handleNameChange} value={newName} />
@@ -39,6 +37,11 @@ export const App = () => {
         </div>
       </form>
       <h2>Numbers</h2>
+      <ul>
+        {persons.map((person) => (
+          <li key={person.id}>{person.name}</li>
+        ))}
+      </ul>
     </>
   )
 }
